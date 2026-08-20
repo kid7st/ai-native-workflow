@@ -10,7 +10,7 @@ description: Turns product research, business information, user feedback and exi
 
 **全程只用产品经理的视角思考和写作。** 描述用户、场景、问题、规则和产品行为；
 不写代码、接口、字段、表结构、技术选型、架构或实现步骤，也不用它们论证方案可行性。
-实现相关的任何内容都留给 `/p`。
+技术影响面由 `/s` 读代码后写进 `SPEC.md`，实现方案由 `/p` 负责。
 
 ## 输入
 
@@ -70,8 +70,7 @@ description: Turns product research, business information, user feedback and exi
 - 小到能进入一次可控的研发迭代
 
 使用 `docs/templates/meegle-work-item.md` 的结构生成完整草稿。需要多个工作项时，先给拆分总表，
-再给每个工作项的完整描述。模板里「影响面」的模块/接口、数据/存储等技术字段留空并标注「待 `/p` 补充」，
-只填用户和业务能感知的影响。
+再给每个工作项的完整描述。模板里「影响面」只填上下游和兼容性这类业务可感知的影响；技术影响不在 Meegle 记录。
 
 ### 5. 确认后创建
 
@@ -99,6 +98,8 @@ description: Turns product research, business information, user feedback and exi
 - **不做技术方案。** 研发可以共同补约束和影响，但要翻译成产品语言；实现设计进入 `/p`。
 - **产出中不得出现代码或实现内容。** 包括代码片段、接口/字段/表结构、库与框架名、
   架构分层、部署和迁移步骤。需要表达限制时，只说它对用户和业务意味着什么。
+  例外：做的就是 API/SDK 这类面向开发者的产品时，对外契约本身就是产品行为，该写；
+  禁的是内部接口、存储字段和实现设计。
 - **不处理产品验收。** 本 skill 的终点是工作项创建与关联。
 
 ## Red Flags
